@@ -22,6 +22,7 @@ tagline: Instructions on various tasks for AAS21.
 production_url : http://corajr.github.io/aas21-docs
 
 show_drafts: true
+gems: ['jekyll-lunr-js-search']
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #

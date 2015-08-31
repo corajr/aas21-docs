@@ -63,16 +63,23 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
-          <form class="navbar-form navbar-right" role="search">
+		  <div class="search">
+          <form class="navbar-form navbar-right" role="search" action="/search" method="GET">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" id="search-query" name="q" lass="form-control" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
+		  </div>
         </div><!-- /.navbar-collapse -->
       </nav>
 
       <div class="container">
+		  <section id="search-results" style="display: none;">
+			  <h1>Search results</h1>
+			  <div class="entries">
+			  </div>
+		  </section>
         {{ content }}
       </div>
 
@@ -94,5 +101,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+
+	{% include search %}
   </body>
 </html>
